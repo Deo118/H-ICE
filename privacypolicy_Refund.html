@@ -36,43 +36,91 @@
         </div>
     </nav>
 </header>
+    <div class="policy-container">
+  <h1>Privacy Policy</h1>
+  <p><strong>Effective Date:</strong> March 25, 2025</p>
+  <p>
+    At H-ICE, your privacy is important to us. This Privacy Policy outlines how we collect, use, and protect your information when you visit our website or interact with our services.
+  </p>
+  <ol>
+    <li>
+      <strong>Information We Collect</strong>
+      <ul>
+        <li>Name and contact information (email, phone number)</li>
+        <li>Billing and shipping addresses</li>
+        <li>Payment details (processed securely via third-party platforms)</li>
+        <li>Website usage data (via cookies and analytics tools)</li>
+      </ul>
+    </li>
+    <li>
+      <strong>How We Use Your Information</strong>
+      <ul>
+        <li>Fulfill and deliver your ice cream orders</li>
+        <li>Improve our website and customer experience</li>
+        <li>Send order updates or promotional content (if subscribed)</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Cookies</strong>
+      <p>We use cookies to enhance your experience. These help us remember your preferences and track usage data. You can disable cookies in your browser settings.</p>
+    </li>
+    <li>
+      <strong>Data Sharing</strong>
+      <p>We do not sell or rent your personal data. We may share it with trusted third-party services (e.g., payment processors, delivery platforms) only to fulfill your orders.</p>
+    </li>
+    <li>
+      <strong>Security</strong>
+      <p>We take reasonable measures to protect your data. However, no online system is 100% secure, so use the site at your discretion.</p>
+    </li>
+    <li>
+      <strong>Your Rights</strong>
+      <p>You may request access to, correction of, or deletion of your personal data by contacting us at: <a href="mailto:email@example.com">email@example.com</a>.</p>
+    </li>
+  </ol>
 
-  <div class="order-form-container fade-in-up-item" id="order">
-    <h1>Order Your Scoop</h1>
-    <form id="order-form">
-      <h3>Order Details</h3>
-      <label for="flavor">Flavor</label>
-      <select id="flavor" name="flavor" required>
-        <option value="" disabled selected>Select your flavor</option>
-        <option>Chocolate</option>
-        <option>Blueberry</option>
-        <option>Banana</option>
-        <option>Matcha</option>
-        <option>Strawberry</option>
-        <option>Vanilla</option>
-      </select>
-
-      <label for="quantity">Quantity (scoops)</label>
-      <input type="number" id="quantity" name="quantity" min="1" required>
-
-      <label for="note">Special Requests (optional)</label>
-      <textarea id="note" name="note" rows="2"></textarea>
-
-      <h3>Personal Information</h3>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="address">Delivery Address</label>
-      <textarea id="address" name="address" rows="3" required></textarea>
-
-      <label for="contact">Contact Number</label>
-      <input type="tel" id="contact" name="contact" placeholder="09XXXXXXXXX" required>
-
-      <div class="order-form-buttons">
-        <a href="Website.html##">← Back to Home</a>
-        <button type="submit">Proceed to Payment</button>
-      </div>
-    </form>
+  <h1 id = "refund">Refund Policy</h1>
+  <p><strong>Last Updated:</strong> May 26, 2025</p>
+  <p>
+    We want you to love your experience with H-ICE. Due to the perishable nature of our products, we offer a limited refund policy as described below.
+  </p>
+  <ol>
+    <li>
+      <strong>Eligibility for Refunds</strong>
+      <ul>
+        <li>Your order arrives melted, damaged, or is incorrect</li>
+        <li>You contact us within 24 hours of delivery with proof (photo and order number)</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Non-Refundable Situations</strong>
+      <ul>
+        <li>Change of mind</li>
+        <li>Delivery delays caused by incorrect address entry or carrier issues outside our control</li>
+        <li>Opened or partially consumed products</li>
+      </ul>
+    </li>
+    <li>
+      <strong>How to Request a Refund</strong>
+      <p>
+        Please email us at <a href="mailto:hicecreamz@gmail.com">hicecreamz@gmail.com</a> with:
+        <ul>
+          <li>Your name</li>
+          <li>Order number</li>
+          <li>Description and photo of the issue</li>
+        </ul>
+        Our support team will review your request and respond within 48 hours.
+      </p>
+    </li>
+    <li>
+      <strong>Exchanges</strong>
+      <p>
+        We do not offer exchanges due to the frozen nature of our products. However, in case of a valid issue, we may offer a coupon for a future order.
+      </p>
+    </li>
+  </ol>
+  <h2>Contact Us</h2>
+  <p>If you have any questions about our policies, feel free to reach out at <a href="Website.html#contact">hicecreamz@gmail.com</a>.</p>
+</div>
   </div>
   <!--Footer Section-->
   <footer class="footer-section">
@@ -180,25 +228,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Payment Modal -->
-    <div id="payment-modal" class="payment-modal">
-      <div class="payment-modal-content">
-        <span class="close-payment-modal">&times;</span>
-        <h2>Payment Details</h2>
-        <img src="qrgcash.jpg" alt="GCash QR Code" style="width:200px;display:block;margin:0 auto 20px;">
-        <form id="payment-form">
-            <label for="payment-proof">Upload Gcash Payment Screenshot</label>
-            <label for="payment-proof" class="custom-file-upload">Choose Image</label>
-            <input type="file" id="payment-proof" name="payment-proof" accept="image/*" required>
-            <span id="file-name"></span>
-            <div class="modal-buttons" style="margin-top:20px;display:flex;gap:10px;justify-content:center;">
-                <button type="button" id="edit-order-btn" class="edit-order-button">Edit Order</button>
-                <button type="submit" id="confirm-order-btn" class="confirm-order-button">Confirm Order</button>
-            </div>
-        </form>
-      </div>
     </div>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>

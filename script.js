@@ -623,26 +623,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Show payment modal 
-  if (proceedBtn && paymentModal) {
-    proceedBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      if (orderForm.checkValidity()) {
+  // Show payment modal
+if (proceedBtn && paymentModal) {
+  proceedBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (orderForm.checkValidity()) {
+      paymentModal.style.display = 'flex';
+      setTimeout(() => {
         paymentModal.classList.add('show');
-      } else {
-        orderForm.reportValidity();
-        alert('Please fill out all required fields before proceeding.');
-      }
-    });
-  }
+      }, 10);
+    } else {
+      orderForm.reportValidity();
+      alert('Please fill out all required fields before proceeding.');
+    }
+  });
+}
 
-  // Close modal 
-  if (closePaymentModal) {
-    closePaymentModal.addEventListener('click', () => paymentModal.classList.remove('show'));
+// Close modal (button)
+if (closePaymentModal) {
+  closePaymentModal.addEventListener('click', () => {
+    paymentModal.classList.remove('show');
+    setTimeout(() => {
+      paymentModal.style.display = 'none';
+    }, 300);
+  });
+}
+if (editOrderBtn) {
+  editOrderBtn.addEventListener('click', () => {
+    paymentModal.classList.remove('show');
+    setTimeout(() => {
+      paymentModal.style.display = 'none';
+    }, 300);
+  });
+}
+
+// Close modal by clicking outside content
+window.addEventListener('click', (e) => {
+  if (e.target === paymentModal) {
+    paymentModal.classList.remove('show');
+    setTimeout(() => {
+      paymentModal.style.display = 'none';
+    }, 300);
   }
-  if (editOrderBtn) {
-    editOrderBtn.addEventListener('click', () => paymentModal.classList.remove('show'));
-  }
+});
 
   // Close confirmation modal
   const confirmationClose = confirmationModal.querySelector('.confirmation-close');
@@ -981,3 +1004,15 @@ async function compressAndConvertToBase64(file) {
     reader.onerror = reject;
   });
 }
+
+// Fade-in-up for flavor and gallery items
+function revealItemsOnScroll() {
+  document.querySelectorAll('.fade-in-up-item').forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      item.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealItemsOnScroll);
+window.addEventListener('DOMContentLoaded', revealItemsOnScroll);
