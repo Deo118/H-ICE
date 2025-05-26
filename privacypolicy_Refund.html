@@ -156,7 +156,6 @@
                     <input type="password" id="login-password" required>
                 </div>
                 <button type="submit" class="auth-submit">Login</button>
-                <div class="loading-spinner" id="login-spinner">Loggin In...</div>
                 <div class="auth-links">
                     <a href="#" id="forgot-password">Forgot password?</a>
                     <a href="#" id="show-signup">Create account</a>
@@ -180,7 +179,6 @@
                     <input type="password" id="signup-confirm" required>
                 </div>
                 <button type="submit" class="auth-submit">Sign Up</button>
-                <div class="loading-spinner" id="signup-spinner">Creating Account...</div>
                 <div class="auth-links">
                     <a href="#" id="show-login">Back to login</a>
                 </div>
@@ -194,7 +192,9 @@
         <div class="account-modal-content">
             <span class="close-account-modal">&times;</span>
             <h2>Account Details</h2>
-            <div id="account-loading" class="loading-spinner">Loading...</div>
+            <div class="loading-spinner" id="account-loading">
+                <span class="spinner"></span>
+            </div>
             <div id="account-content">
                 <form id="account-form">
                     <div class="form-group">

@@ -226,8 +226,8 @@ closeSignupConfirmation.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('login-form');
   const signupForm = document.getElementById('signup-form');
-  const loginSpinner = document.getElementById('login-spinner');
-  const signupSpinner = document.getElementById('signup-spinner');
+  const loginSpinner = document.getElementById('login-loading');
+  const signupSpinner = document.getElementById('create-account-loading');
 
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {

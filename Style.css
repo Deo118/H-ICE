@@ -238,8 +238,8 @@ header {
 }
 
 .auth-modal-content {
-    background-color: var(--Pastel-Golden-Peach);
-    color: var(--Deep-Charcoal);
+    background-color: var(--Deep-Navy-Blue);
+    color: white;
     margin: 15% auto;
     padding: 30px;
     border-radius: var(--border-radius-m);
@@ -267,7 +267,13 @@ header {
   right: 20px;
   top: 10px;
   font-size: 24px;
+  color: white;
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--Light-Aqua-Blue);
 }
 
 .auth-links {
@@ -277,13 +283,13 @@ header {
 }
 
 .auth-links a {
-    color: var(--Deep-Charcoal);
+    color: white;
     text-decoration: none;
-    font-size: 14px;
+    transition: color 0.3s ease;
 }
 
 .auth-links a:hover {
-    text-decoration: underline;
+    color: var(--Light-Aqua-Blue);
 }
 
 .auth-form {
@@ -332,11 +338,10 @@ header {
 .form-group input {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--Deep-Charcoal);
     border-radius: 4px;
-    color: var(--Deep-Charcoal);
+    color: var(--Deep-Navy-Blue);
     font-size: var(--font-size-s);
-    background-color: var(--Soft-Cream);
+    background-color: white;
 }
 
 .auth-links {
@@ -348,7 +353,7 @@ header {
 }
 
 .auth-links a {
-    color: var(--Deep-Charcoal);
+    color: var(--Light-Aqua-Blue);
     text-decoration: none;
     font-size: 14px;
 }
@@ -358,19 +363,20 @@ header {
 }
 
 .auth-submit {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--Deep-Charcoal);
-    font-size: var(--font-size-m);
+    background: transparent;
     color: white;
-    border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: var(--border-radius-m);
     cursor: pointer;
-    margin-top: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .auth-submit:hover {
-    background-color: #555;
+    background: white;
+    color: var(--Deep-Navy-Blue);
+    transform: translateY(-2px);
 }
 
 .auth-error {
@@ -399,16 +405,17 @@ header {
     opacity: 1;
 }
 .account-modal-content {
-    background-color: var(--Pastel-Golden-Peach);
-    color: var(--Deep-Charcoal);
+    background-color: var(--Deep-Navy-Blue);
+    color: white;
     margin: 5% auto;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: var(--border-radius-m);
     width: 90%;
-    max-width: 400px;
+    max-width: 600px;
     position: relative;
-    max-height: 80vh;
+    max-height: 90vh;
     overflow-y: auto;
+    transition: all 0.3s ease;
 }
 
 .account-modal-content::-webkit-scrollbar {
@@ -443,32 +450,67 @@ header {
 
 .close-account-modal {
     position: absolute;
-    right: 20px;
-    top: 10px;
+    top: 15px;
+    right: 15px;
     font-size: 24px;
+    color: white;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-account-modal:hover {
+    color: var(--Light-Aqua-Blue);
 }
 
 .loading-spinner {
     text-align: center;
     padding: 10px;
     font-size: 14px;
-    color: var(--Deep-Charcoal);
-    display: none; /* Hidden by default */
+    color: white;
+    display: none; 
+}
+
+.spinner {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .account-actions {
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#account-form .form-group {
+    margin-bottom: 10px;
 }
 
 #account-content.view-mode input,
 #account-content.view-mode textarea {
-    background-color: var(--Soft-Cream);
-    border: 1px solid var(--Deep-Charcoal);
+    background-color: white;
+    border: 1px solid var(--Light-Aqua-Blue);
     pointer-events: none;
+    color: var(--Deep-Navy-Blue);
+}
+
+#account-form .auth-submit {
+    display: block;
+    margin: 24px auto 0 auto; 
+    padding: 10px 32px;
+    font-size: 1rem;
+    border-radius: 20px;
 }
 
 #account-content.view-mode button[type="submit"] {
@@ -488,10 +530,31 @@ header {
 }
 
 .account-section-content {
-    background: #f9f9f9;
+    background: white;
     border-radius: 8px;
     padding: 15px;
     min-height: 100px;
+    border: 1px solid var(--Light-Aqua-Blue);
+}
+
+#account-content.edit-mode .logout-button {
+    display: none;
+}
+
+#account-content.edit-mode .save-button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
+}
+
+#account-content.view-mode .save-button {
+    display: none;
+}
+
+#account-content.view-mode .logout-button {
+    display: block;
 }
 
 /* order history section */
@@ -1517,6 +1580,11 @@ header {
   opacity: 0;
 }
 
+img[alt="GCash QR Code"] {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
 .payment-modal.show .payment-modal-content {
   transform: translateY(0);
   opacity: 1;
@@ -1537,23 +1605,43 @@ header {
   cursor: pointer;
 }
 .edit-order-button, 
-.confirm-order-button,
-.custom-file-upload{
+.confirm-order-button{
   background: var(--Light-Aqua-Blue);
   color: var(--Deep-Navy-Blue);
   padding: 10px 20px;
-  border-radius: 20px;
+  border: 1px solid white;
+  border-radius: var(--border-radius-m);
   font-weight: bold;
-  border: none;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
   font-size: var(--font-size-m);
 }
 .edit-order-button:hover,
-.confirm-order-button:hover,
-.custom-file-upload:hover {
+.confirm-order-button:hover {
+  background: var(--Deep-Navy-Blue);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.custom-file-upload {
+  background: var(--Light-Aqua-Blue);
+  color: var(--Deep-Navy-Blue);
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: var(--border-radius-m);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: var(--font-size-m);
+  display: inline-block;
+  text-align: center;
+}
+
+.custom-file-upload:hover,
+.custom-file-upload:focus {
   background: var(--Deep-Navy-Blue);
   color: white !important;
+  transform: translateY(-2px);
 }
 
 #payment-form label {
